@@ -15,6 +15,23 @@ public class Node{
     return this.value;
   }
 
+  public void visit(){
+    if(this.left != null){
+      this.left.visit();
+    }else{
+      System.out.println(this.value);
+    }
+
+    if(this.right != null){
+      this.right.visit();
+    }else{
+      System.out.println(this.value);
+    }
+
+
+  }
+
+// As it is, a node with the same value as the another one, nothing will happen
   public void addNode(Node aNode){
     if(this.value > aNode.value){
       if(this.left == null){
