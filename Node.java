@@ -30,7 +30,7 @@ public class Node{
     //System.out.println(this.value); // This is if you want to have it from biggest to smallest number
   }
 
-// As it is, a node with the same value as the another one, nothing will happen
+// As it is, a node with the same value as another one will be ignored
   public void addNode(Node aNode){
     if(this.value > aNode.value){
       if(this.left == null){
