@@ -7,28 +7,27 @@ public class Node{
     this.value = val;
   }
 
-  public void setNode(int aValue){
-    this.value = aValue;
-  }
-
-  public int getNode(){
-    return this.value;
+  public void search(int value){
+    if(this.value == value){
+      System.out.println("found " + value);
+    } else if(value < this.value && this.left != null){
+      this.left.search(value);
+    } else if(value > this.value && this.right != null){
+      this.right.search(value);
+    }
   }
 
   public void visit(){
     if(this.left != null){
       this.left.visit();
-    }else{
-      System.out.println(this.value);
     }
+
+    System.out.println(this.value); // This is if you want to have it from smallest to biggest number
 
     if(this.right != null){
       this.right.visit();
-    }else{
-      System.out.println(this.value);
     }
-
-
+    //System.out.println(this.value); // This is if you want to have it from biggest to smallest number
   }
 
 // As it is, a node with the same value as the another one, nothing will happen
