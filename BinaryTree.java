@@ -9,22 +9,30 @@ public class BinaryTree{
     return aTree.root;
   }
 
-  public static void addTreeValue(BinaryTree aTree, int val){
+  public void traverse(){
+    this.root.visit();
+  }
+
+  public void addValue(int val){
     Node aNode = new Node(val);
-    if(aTree.root == null){
-      aTree.root = aNode;
+    if(this.root == null){
+      this.root = aNode;
     }else{
-      aTree.root.addNode(aNode);
+      this.root.addNode(aNode);
     }
   }
 
-
   public static void main(String... args){
     BinaryTree bTree = new BinaryTree();
+    BinaryTree secondTree = new BinaryTree();
 
-    addTreeValue(bTree, 2);
-    addTreeValue(bTree, 3);
-    System.out.println(bTree.root);
+
+    bTree.addValue(2);
+    bTree.addValue(3);
+    bTree.addValue(8);
+    bTree.addValue(7);
+
+    bTree.traverse();
 
   }
 
